@@ -7,12 +7,13 @@ f = open("./split_and_sort_test_scenarii.json")
 # returns JSON object as a dictionary
 scenarii = json.load(f)
 
-for scenario in scenarii:
+for index, scenario in enumerate(scenarii):
     s_name = scenario["name"]
-    print(f"Playing scenario {s_name}")
+    print(f"#{index} - {s_name}")
     out = split_and_sort(scenario["sentence"], scenario["size"])
     if str(out) == str(scenario["expected"]):
         print("Test OK")
     else:
         print("Test NOK")
         print(f"Returned value : {out}")
+    print()
