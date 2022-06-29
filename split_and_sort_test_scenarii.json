@@ -1,0 +1,38 @@
+[
+    {
+        "name"     : "Example test case",
+        "sentence" : "baz bar foo foo zblah zblah zblah baz toto bar",
+        "size"     : "3",
+        "expected" : "[('zblah', 3), ('bar', 2), ('baz', 2)]"
+    },
+    {
+        "name"     : "Only one value",
+        "sentence" : "baz bar foo foo zblah zblah zblah baz toto bar",
+        "size"     : "1",
+        "expected" : "[('zblah', 3)]"
+    },
+    {
+        "name"     : "Alphabetical order",
+        "sentence" : "baz bar foo foo zblah zblah baz toto bar",
+        "size"     : "3",
+        "expected" : "[('bar', 2), ('baz', 2), ('foo', 2)]"
+    },
+    {
+        "name"     : "Size of 0",
+        "sentence" : "baz bar foo foo zblah zblah zblah baz toto bar",
+        "size"     : "0",
+        "expected" : "[]"
+    },
+    {
+        "name"     : "Size > size of number of words",
+        "sentence" : "baz bar foo foo zblah zblah zblah baz toto bar",
+        "size"     : "20",
+        "expected" : "[('zblah', 3), ('bar', 2), ('baz', 2), ('foo', 2), ('toto', 1)]"
+    },
+    {
+        "name"     : "Size not an integer",
+        "sentence" : "baz bar foo foo zblah zblah zblah baz toto bar",
+        "size"     : "toto",
+        "expected" : "[]"
+    }
+]
